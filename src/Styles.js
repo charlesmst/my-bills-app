@@ -14,7 +14,7 @@ export const fontSize = "15px";
 
 //http://c0bra.github.io/color-scheme-js/
 const colorScheme = [
-  "#ff9966",
+  "#3c5e9d",
   "#996633",
   "#ffcccc",
   "#cc6633",
@@ -28,6 +28,7 @@ const colorScheme = [
   "#33cc99"
 ];
 export const primary1 = colorScheme[0];
+export const fontColor1 = "#fff";
 export const secondary1 = colorScheme[1];
 export const normal1 = colorScheme[2];
 export const contrast1 = colorScheme[3];

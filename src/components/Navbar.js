@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { primary1, secondary1, accent1, fontSize } from "../Styles";
+import { primary1, secondary1, accent1, fontSize, fontColor1 } from "../Styles";
 const Nav = styled.nav`
   width: 100%;
   background: ${primary1};
@@ -17,11 +17,11 @@ const MenuList = styled.ul`
   align-items: center;
   a {
     text-decoration: none;
-    color: white;
+    color: ${fontColor1};
   }
   & > li.item {
     display: ${({ active }) => (active ? "block" : "none")};
-    color: white;
+    color: ${fontColor1};
     width: 100%;
     text-align: center;
     padding: 15px 5px;
@@ -31,7 +31,7 @@ const MenuList = styled.ul`
   .logo a {
     font-size: 20px;
     text-decoration: none;
-    color: white;
+    color: ${fontColor1};
   }
   .logo {
     order: 0;
@@ -40,7 +40,7 @@ const MenuList = styled.ul`
     order: 1;
     padding: 5px;
     a {
-      color: ${secondary1};
+      color: ${fontColor1};
       font-size: 20px;
     }
   }
@@ -50,6 +50,31 @@ const MenuList = styled.ul`
   .item {
     order: 3;
   }
+
+  @media all and (min-width: 900px) {
+    & > li.item {
+      display: block;
+      width: auto;
+    }
+    .toggle {
+      display: none;
+    }
+    .logo {
+      order: 0;
+    }
+    .item {
+      order: 1;
+    }
+    .button {
+      order: 2;
+    }
+    ul li {
+      padding: 15px 10px;
+    }
+    ul li.button {
+      padding-right: 0;
+    }
+  }
 `;
 const Menu = ({ href, children, type }) => (
   <li className={type}>
@@ -57,27 +82,23 @@ const Menu = ({ href, children, type }) => (
   </li>
 );
 
-const ToggleLi = styled.li`
-  color: white;
-`;
 const Toggle = ({ active, toggle }) => (
   <li className={"toggle"}>
-    <a href="#" onClick={toggle}>
+    <a href="/#" onClick={toggle}>
       <i className={"fa " + (!active ? "fa-bars" : "fa-times")}></i>
     </a>
   </li>
 );
-export default function Navbar({ active, toggle }) {
+export default function Navbar({ active, toggle, menus, logo }) {
   return (
     <Nav>
       <MenuList active={active}>
-        <Menu type={"logo"}>My bills App</Menu>
-        <Menu type={"item"}>Example1</Menu>
-        <Menu type={"item"}>Example1</Menu>
-        <Menu type={"item button"}>Login</Menu>
-        <Menu type={"item button"}>Signup</Menu>
-        <Menu type={"item"}>Example2</Menu>
-        <Menu type={"item"}>Example3</Menu>
+        <Menu type={"logo"}>{logo}</Menu>
+        {(menus || []).map(x => (
+          <Menu key={x.title} href={x.href} type={"item " + (x.type || "")}>
+            {x.title}
+          </Menu>
+        ))}
         <Toggle active={active} toggle={toggle}></Toggle>
       </MenuList>
     </Nav>

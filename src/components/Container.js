@@ -6,5 +6,6 @@ const Container = styled.div`
   font-family: ${fontFamily};
   font-size: ${fontSize};
   color: ${gray2};
+  background: #f7f7f7;
 `;
 export default Container;

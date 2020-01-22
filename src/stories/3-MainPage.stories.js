@@ -8,4 +8,8 @@ export default {
   component: MainPage
 };
 
-export const MainUsecase = () => <MainPage />;
+export const MainUsecase = () => (
+  <MainPage>
+    <h1>Main Content</h1>
+  </MainPage>
+);

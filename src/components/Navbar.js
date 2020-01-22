@@ -7,11 +7,13 @@ const Nav = styled.nav`
   background: ${primary1};
   margin: 0;
   color: ${accent1};
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.09);
 `;
 const MenuList = styled.ul`
   list-style-type: none;
   padding: 5px 20px;
   display: flex;
+
   margin: 0;
   flex-wrap: wrap;
   justify-content: space-between;

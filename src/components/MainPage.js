@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Container from "./Container";
+import Card from "./Card";
 export default function MainPage({ children }) {
   const [navbarActive, setNavbarActive] = React.useState(false);
   const toggle = e => {
@@ -15,7 +16,8 @@ export default function MainPage({ children }) {
         logo={"My Bills App"}
         menus={[{ title: "menu1", href: "/" }]}
       />
-      <div>{children}</div>
+
+      <Card>{children}</Card>
     </Container>
   );
 }

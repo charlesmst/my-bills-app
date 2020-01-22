@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
+import { mountWithContext } from "../tests";
 const menus = [
   { title: "Home", href: "/" },
   { title: "Hello World", href: "/hello-world" },
@@ -9,7 +10,7 @@ const menus = [
 const logo = "Testing App";
 const dafaultProps = { active: true, menus, logo };
 it("should render logo name", () => {
-  const wrapper = mount(<Navbar {...dafaultProps} />);
+  const wrapper = mountWithContext(<Navbar {...dafaultProps} />);
   expect(
     wrapper
       .find("li")
@@ -19,7 +20,7 @@ it("should render logo name", () => {
 });
 
 it("should render menus", () => {
-  const wrapper = mount(<Navbar {...dafaultProps} />);
+  const wrapper = mountWithContext(<Navbar {...dafaultProps} />);
   expect(wrapper.find("li.item").length).toEqual(menus.length);
   expect(
     wrapper
@@ -35,12 +36,12 @@ it("should render menus", () => {
   ).toEqual(menus[0].href);
 });
 it("should render without menus", () => {
-  mount(<Navbar {...dafaultProps} menus={null} />);
+  mountWithContext(<Navbar {...dafaultProps} menus={null} />);
 });
 
 it("should call toggle on click", () => {
   const toggle = jest.fn();
-  const wrapper = mount(
+  const wrapper = mountWithContext(
     <Navbar {...dafaultProps} active={false} toggle={toggle} />
   );
   const toggleElement = wrapper.find(".toggle a").first();

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { primary1, secondary1, accent1, fontSize, fontColor1 } from "../Styles";
+import { Link } from "react-router-dom";
+import { primary1, accent1, fontSize, fontColor1 } from "../Styles";
 const Nav = styled.nav`
   width: 100%;
   background: ${primary1};
@@ -78,7 +79,7 @@ const MenuList = styled.ul`
 `;
 const Menu = ({ href, children, type }) => (
   <li className={type}>
-    <a href={href || "#"}>{children}</a>
+    <Link to={href || "#"}>{children}</Link>
   </li>
 );
 

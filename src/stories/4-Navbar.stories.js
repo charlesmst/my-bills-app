@@ -8,16 +8,23 @@ export default {
   title: "Navbar",
   component: Navbar
 };
-
+const menus = [
+  { title: "Home", href: "/" },
+  { title: "Hello World", href: "/hello-world" },
+  { title: "Signup", href: "/signup", type: "button" },
+  { title: "Login", href: "/login", type: "button" }
+];
+const logo = "Testing App";
+const dafaultProps = { active: true, menus, logo };
 export const Active = () => (
   <Container>
-    <Navbar active={true} toggle={action("toggle")} />
+    <Navbar {...dafaultProps} active={true} toggle={action("toggle")} />
   </Container>
 );
 
 export const Inactive = () => (
   <Container>
-    <Navbar active={false} toggle={action("toggle")} />
+    <Navbar {...dafaultProps} active={false} toggle={action("toggle")} />
   </Container>
 );
 
@@ -29,7 +36,7 @@ export const Toggle = () => {
   };
   return (
     <Container>
-      <Navbar active={active} toggle={toggle} />
+      <Navbar {...dafaultProps} active={active} toggle={toggle} />
     </Container>
   );
 };

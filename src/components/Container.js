@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { fontFamily, fontSize, gray2 } from "../Styles";
 

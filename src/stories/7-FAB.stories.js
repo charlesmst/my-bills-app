@@ -11,11 +11,11 @@ export default {
 
 export const AddButton = () => (
   <Container>
-    <FAB />
+    <FAB onClick={action("click")} />
   </Container>
 );
 export const CustomIcon = () => (
   <Container>
-    <FAB icon={"bars"} title={"Bars Icon"} />
+    <FAB icon={"bars"} title={"Bars Icon"} onClick={action("click")} />
   </Container>
 );

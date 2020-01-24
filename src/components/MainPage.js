@@ -14,7 +14,7 @@ export default function MainPage({ children }) {
         active={navbarActive}
         toggle={toggle}
         logo={"My Bills App"}
-        menus={[{ title: "menu1", href: "/" }]}
+        menus={[{ title: "Accounts", href: "/accounts" }]}
       />
 
       <Card>{children}</Card>

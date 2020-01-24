@@ -2,6 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import MainPage from "./components/MainPage";
+import AccountList from "./pages/AccountList";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 export default function App() {
   return (
@@ -9,8 +10,8 @@ export default function App() {
       {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
       <Switch>
-        <Route path="/about">
-          <About />
+        <Route path="/accounts">
+          <AccountList />
         </Route>
         <Route path="/users">
           <Users />

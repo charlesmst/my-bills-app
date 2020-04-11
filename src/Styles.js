@@ -11,6 +11,7 @@ export const accent1 = "#9b8dab";
 // Fonts
 export const fontFamily = "Open Sans,'Segoe UI', 'Helvetica Neue',sansserif";
 export const fontSize = "15px";
+export const fontSizeSmall = "12px";
 
 //http://c0bra.github.io/color-scheme-js/
 const colorScheme = [
@@ -34,3 +35,4 @@ export const fontColorCard1 = "#000";
 export const secondary1 = colorScheme[1];
 export const normal1 = colorScheme[2];
 export const contrast1 = colorScheme[3];
+export const error1 = "#dc3545";
